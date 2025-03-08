@@ -1,139 +1,81 @@
 import 'package:flutter/material.dart';
 import 'package:vak_app/screen/stageScreen/main/stageScreen.dart';
+import 'package:vak_app/style/boldTextStyle.dart';
 import 'package:vak_app/style/localColor.dart';
+import 'package:vak_app/style/regulerTextStyle.dart';
 
 class SubjectCarouselWidget extends StatelessWidget {
-  const SubjectCarouselWidget({super.key});
+  final bool isActive;
+
+  const SubjectCarouselWidget({super.key, required this.isActive});
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Container(
-          width: double.infinity,
-          height: 650,
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
-              color: LocalColor.primary,
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(top: 40, left: 24),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-               Text(
-                "Title",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 24,
-                ),
-              ),
-               SizedBox(height: 10),
-               Text(
-                "Explanation",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 16,
-                ),
-              ),
-            ],
-          ),
-        ),
-       Positioned(
-        right: 0,
-        bottom: 0,
-        child: ClipRRect(
-          borderRadius: BorderRadius.only(
-            bottomRight: Radius.circular(20),
-          ),
-          child: Image.asset(
-            "assets/images/component/LoFi-Subject Cat Image.png",
-            fit: BoxFit.cover,
-            width: 193, // Sesuaikan ukuran jika perlu
-            height: 304,
-          ),
-        ),
+    return Container(
+      width: isActive ? 320 : 280, // Kurangi ukuran saat tidak aktif
+      padding: EdgeInsets.all(14),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(14),
+        color: Colors.white,
       ),
-
-
-        Positioned(
-          left: 24,
-          bottom: 50,
-          child: SizedBox(
-            width: 130,
-            child: ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.white,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 20),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          // Gunakan ClipRRect untuk mencegah overflow
+          ClipRRect(
+            borderRadius: BorderRadius.circular(8),
+            child: AnimatedContainer(
+              duration: Duration(milliseconds: 300),
+              curve: Curves.easeInOut,
+              width: isActive ? 294 : 240, // Ukuran dinamis
+              height: isActive ? 299 : 220, // Ukuran dinamis
+              child: FittedBox(
+                fit: BoxFit.cover,
+                child: Image.asset("assets/images/background/homebackground.png"),
               ),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => StageScreen()),
-                );
-              },
-              child: Text(
-                "Belajar"
-              ),
-              
             ),
           ),
-        ),
-      ],
+          const SizedBox(height: 10),
+          Text(
+            "Materi",
+            style: BoldTextStyle.textTheme.titleLarge,
+          ),
+          const SizedBox(height: 16),
+          // **🔹 Gunakan AnimatedSize agar tombol berubah ukuran secara smooth**
+          AnimatedSize(
+            duration: Duration(milliseconds: 300),
+            curve: Curves.easeInOut,
+            child: IntrinsicWidth(
+              child: Container(
+                height: isActive ? 44 : 36, // Sesuaikan tinggi dengan keadaan aktif/tidak
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: LocalColor.primary,
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+                    padding: EdgeInsets.symmetric(vertical: 8, horizontal: 24),
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => StageScreen()),
+                    );
+                  },
+                  child: Text(
+                    "Mulai Pelajaran",
+                    style: RegulerTextStyle.textTheme.bodyLarge!.copyWith(
+                      color: Colors.white,
+                      fontSize: isActive ? 16 : 14,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
     );
-   
   }
 }
-
-
-//  Container(
-//       width: MediaQuery.of(context).size.width, // Pastikan gambar penuh
-//       height: 650, // Perbesar agar proporsional
-//       child: Column(
-//         crossAxisAlignment: CrossAxisAlignment.center,
-//         children: [
-//           // Gambar besar
-//           ClipRRect(
-//             borderRadius: BorderRadius.circular(15),
-//             child: Image.asset(
-//               "assets/images/component/LoFi-Subject Image.png",
-//               height: 450, // Ukuran lebih besar
-//               width: double.infinity,
-//               fit: BoxFit.cover,
-//             ),
-//           ),
-
-//           const SizedBox(height: 15),
-
-//           // Button untuk navigasi
-//           ElevatedButton(
-//             style: ElevatedButton.styleFrom(
-//               backgroundColor: LocalColor.primary,
-//               shape: RoundedRectangleBorder(
-//                 borderRadius: BorderRadius.circular(10),
-//               ),
-//               padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 20),
-//             ),
-//             onPressed: () {
-//               Navigator.push(
-//                 context,
-//                 MaterialPageRoute(builder: (context) => StageScreen()),
-//               );
-//             },
-//             child: Text(
-//               "Mata Pelajaran",
-//               style: TextStyle(
-//                 color: Colors.white, 
-//                 fontSize: 16, 
-//                 fontWeight: FontWeight.bold
-//               ),
-//             ),
-//           ),
-//         ],
-//       ),
-//     );

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:vak_app/routes/appRouteConstant.dart';
 import 'package:vak_app/style/localColor.dart';
-import 'package:vak_app/style/localTextStyle.dart';
+import 'package:vak_app/style/regulerTextStyle.dart';
 
 class RegistrationFormWidget extends StatefulWidget {
   const RegistrationFormWidget({super.key});
@@ -26,7 +26,7 @@ class _RegistrationFormWidgetState extends State<RegistrationFormWidget> {
             border: OutlineInputBorder(borderRadius: BorderRadius.circular(10.0)),
             // Ubah text jika sudah memiliki style
             labelText: 'Username',
-            labelStyle: LocalTextStyle.textTheme.bodySmall!.copyWith(color: Colors.black),
+            labelStyle: RegulerTextStyle.textTheme.bodySmall!.copyWith(color: Colors.black),
           ),
         ),
         const SizedBox(height: 20.0),
@@ -36,7 +36,7 @@ class _RegistrationFormWidgetState extends State<RegistrationFormWidget> {
             border: OutlineInputBorder(borderRadius: BorderRadius.circular(10.0)),
             // Ubah text jika sudah memiliki style
             labelText: 'Username',
-            labelStyle: LocalTextStyle.textTheme.bodySmall!.copyWith(color: Colors.black),
+            labelStyle: RegulerTextStyle.textTheme.bodySmall!.copyWith(color: Colors.black),
           ),
         ),
         const SizedBox(height: 20),
@@ -47,7 +47,7 @@ class _RegistrationFormWidgetState extends State<RegistrationFormWidget> {
             border: OutlineInputBorder(borderRadius: BorderRadius.circular(10.0)),
             // Ubah text jika sudah memiliki style
             labelText: 'Password',
-            labelStyle: LocalTextStyle.textTheme.bodySmall!.copyWith(color: Colors.black),
+            labelStyle: RegulerTextStyle.textTheme.bodySmall!.copyWith(color: Colors.black),
           ),
         ),
         const SizedBox(height: 30),
@@ -64,16 +64,16 @@ class _RegistrationFormWidgetState extends State<RegistrationFormWidget> {
             // Ubah text jika sudah memiliki style
             child: Text(
               "Daftar",
-              style: LocalTextStyle.textTheme.bodyMedium!.copyWith(
+              style: RegulerTextStyle.textTheme.bodyLarge!.copyWith(
                 color: Colors.white,
                 fontWeight: FontWeight.w600,
               ),
             ),
           ),
         ),
-        const SizedBox(height: 20.0),
+        // const SizedBox(height: 20.0),
         // Redirect to Register Page
-        Center(child: Text("Sudah punya akun?")),
+        // Center(child: Text("Sudah punya akun?")),
         const SizedBox(height: 20.0),
         SizedBox(
           height: 44,
@@ -86,7 +86,7 @@ class _RegistrationFormWidgetState extends State<RegistrationFormWidget> {
             ),
             child: Text(
               'Masuk',
-              style: LocalTextStyle.textTheme.bodyMedium!.copyWith(
+              style: RegulerTextStyle.textTheme.bodyLarge!.copyWith(
                 color: LocalColor.primary,
                 fontWeight: FontWeight.w600,
               ),

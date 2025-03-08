@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:vak_app/routes/appRouteConstant.dart';
 import 'package:vak_app/style/localColor.dart';
-import 'package:vak_app/style/localTextStyle.dart';
+import 'package:vak_app/style/regulerTextStyle.dart';
 
 void main() {
   runApp(MyApp());
@@ -135,7 +135,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 // Ubah text jika sudah memiliki style
                 child: Text(
                   "Daftar",
-                  style: LocalTextStyle.textTheme.bodyMedium!.copyWith(
+                  style: RegulerTextStyle.textTheme.bodyLarge!.copyWith(
                     color: Colors.white,
                     fontWeight: FontWeight.w600,
                   ),
@@ -154,7 +154,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 ),
                 child: Text(
                   'Masuk',
-                  style: LocalTextStyle.textTheme.bodyMedium!.copyWith(
+                  style: RegulerTextStyle.textTheme.bodyLarge!.copyWith(
                     color: LocalColor.primary,
                     fontWeight: FontWeight.w600,
                   ),

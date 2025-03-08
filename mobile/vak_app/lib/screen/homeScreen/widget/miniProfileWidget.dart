@@ -1,37 +1,40 @@
 import 'package:flutter/material.dart';
 import 'package:vak_app/style/localColor.dart';
 
-class MiniProfileWidget extends StatelessWidget {
+class MiniProfileWidget extends StatelessWidget implements PreferredSizeWidget {
   const MiniProfileWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      height: 60.0,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        color: Colors.white,
-      ),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 8),
-        child: Row(
-          children: [
-            // avatar
-            CircleAvatar(
-              radius: 25,
-              backgroundColor: LocalColor.transparent,
-              child: ClipOval(
-                child: Image.asset("assets/images/component/maleicon.png"),
+    return SafeArea(
+      child: ClipRRect(
+        borderRadius: const BorderRadius.only(
+          bottomLeft: Radius.circular(10),
+          bottomRight: Radius.circular(10),
+        ),
+        child: Container(
+          width: double.infinity,
+          height: preferredSize.height,
+          color: Colors.white, // Warna AppBar
+          padding: const EdgeInsets.symmetric(horizontal: 8),
+          child: Row(
+            children: [
+              CircleAvatar(
+                radius: 25,
+                backgroundColor: LocalColor.transparent,
+                child: ClipOval(
+                  child: Image.asset("assets/images/component/maleicon.png"),
+                ),
               ),
-            ),
-            SizedBox(width: 20,),
-            Text(
-              "Name"
-            ),
-          ],
+              const SizedBox(width: 20),
+              const Text("Name"),
+            ],
+          ),
         ),
       ),
     );
   }
+
+  @override
+  Size get preferredSize => const Size.fromHeight(60);
 }
