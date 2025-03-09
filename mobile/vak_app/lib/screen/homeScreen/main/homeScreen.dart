@@ -97,7 +97,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     height: 70,
                     decoration: BoxDecoration(
                        image: DecorationImage(
-                        image: AssetImage("assets/images/component/HiFi-English Subject Icon.png"),
+                        image: AssetImage("assets/images/component/HiFi-Bahasa Inggris Subject Icon.png"),
                         fit: BoxFit.cover,
                       ),
                     ),

@@ -14,7 +14,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Timer(const Duration(seconds: 3), () {
+    Timer(const Duration(seconds: 1), () {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (context) => const SplashScreen2()),
@@ -31,18 +31,9 @@ class _SplashScreenState extends State<SplashScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(
-              "assets/images/component/LoFi-Subject Cat Image.png",
+              "assets/images/component/Text type Logo App white.png",
               width: 150,
               height: 150,
-            ),
-            const SizedBox(height: 20),
-            const Text(
-              "Welcome to Vak App",
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
             ),
           ],
         ),
@@ -62,7 +53,7 @@ class _SplashScreen2State extends State<SplashScreen2> {
   @override
   void initState() {
     super.initState();
-    Timer(const Duration(seconds: 3), () {
+    Timer(const Duration(seconds: 1), () {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (context) => OnboardingScreen()),
@@ -73,24 +64,15 @@ class _SplashScreen2State extends State<SplashScreen2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.deepPurple,
+     backgroundColor: LocalColor.primary,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(
-               "assets/images/component/LoFi-Subject Cat Image.png",
+               "assets/images/component/dummy splash.png",
               width: 150,
               height: 150,
-            ),
-            const SizedBox(height: 20),
-            const Text(
-              "Powered by Flutter",
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
             ),
           ],
         ),

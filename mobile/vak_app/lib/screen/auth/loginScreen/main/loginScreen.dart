@@ -11,29 +11,32 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.blue,
-      body: Container(
-      decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage("assets/images/component/LoFi-Onboarding Image.png"),
-            fit: BoxFit.cover,
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Colors.blue,
+        body: Container(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              const SizedBox(height: 250,),
+              Image.asset("assets/images/component/HiFi-Cat.png"),
+            ],
           ),
         ),
+        bottomSheet: Container(
+          height: 400,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(20),
+              topRight: Radius.circular(20),
+            ),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
+              child: LoginFormWidget(),
+          ),
+        ), 
       ),
-      bottomSheet: Container(
-        height: 400,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(20),
-            topRight: Radius.circular(20),
-          ),
-        ),
-        child: Padding(
-           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
-            child: LoginFormWidget(),
-        ),
-      ), 
     );
   }
 }

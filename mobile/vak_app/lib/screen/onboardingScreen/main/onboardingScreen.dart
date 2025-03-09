@@ -57,17 +57,17 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   },
                   children: [
                     _buildPage(
-                        "assets/images/component/LoFi-Onboarding Image.png",
-                        "Welcome",
-                        "This is the first onboarding screen"),
+                        "assets/images/component/HiFI-Dummy.png",
+                        "Bermain Dan Belajar",
+                        "Belajar dengan cara yang asik dan menyenangkan"),
                     _buildPage(
-                        "assets/images/component/LoFi-Onboarding Image.png",
-                        "Features",
-                        "Here are some features of our app"),
+                        "assets/images/component/HiFI-Dummy.png",
+                        "Metode yang sempurna",
+                        "Metode yang tepat buat gaya belajarmu"),
                     _buildPage(
-                        "assets/images/component/LoFi-Onboarding Image.png",
-                        "Get Started",
-                        "Sign up or login to continue"),
+                        "assets/images/component/HiFI-Dummy.png",
+                        "Lihat Statistikmu",
+                        "Lihatlah bagaimana kamu berkembang"),
                   ],
                 ),
               ),
@@ -82,7 +82,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     onPressed: () => _controller.jumpToPage(2),
                     child: Text(
                       "Lewati",
-                      style: TextStyle(color: Colors.blue, fontSize: 16),
+                      style: TextStyle(color: LocalColor.primary, fontSize: 16),
                     ),
                   )
                 : SizedBox.shrink(),
