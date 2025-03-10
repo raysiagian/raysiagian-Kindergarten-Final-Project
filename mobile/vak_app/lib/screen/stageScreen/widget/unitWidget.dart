@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:vak_app/screen/stageScreen/main/audioScreen.dart';
 import 'package:vak_app/screen/stageScreen/main/kinestetikScreen.dart';
+import 'package:vak_app/screen/stageScreen/main/kinestetikScreen2.dart';
+import 'package:vak_app/screen/stageScreen/main/kinestetikScreen3t.dart';
 import 'package:vak_app/screen/stageScreen/main/visualScreen.dart';
 
 class UnitWidget extends StatelessWidget {
@@ -19,10 +21,12 @@ class UnitWidget extends StatelessWidget {
     List<Widget> pages = [
       VisualScreen(), // Halaman untuk ikon pertama
       AudioScreen(), // Halaman untuk ikon kedua
-      KinestetikScreen(), // Halaman untuk ikon ketiga
-      Page4(), // Dan seterusnya...
-      Page5(), 
-      Page6(), 
+      KinestetikScreen2(),
+      Page4(),
+      // KinestetikScreen(), // Halaman untuk ikon ketiga
+      // Dan seterusnya...
+      Page5(),
+      Page6(),
     ];
 
     return Column(
@@ -53,32 +57,34 @@ class UnitWidget extends StatelessWidget {
                 height: 500, // Tinggi area Stack
                 color: Colors.transparent,
               ),
-          
+
               // Menggunakan List.generate untuk efek ular (zig-zag 2 langkah)
               ...List.generate(6, (index) {
                 double topPosition = 20 + (index * spacing); // Jarak antar ikon
-                double baseOffset = (screenWidth - iconSize) / 2; // Posisi tengah container
-          
+                double baseOffset =
+                    (screenWidth - iconSize) / 2; // Posisi tengah container
+
                 // Pola zig-zag hanya 2 langkah: kanan & kiri bergantian
-                double horizontalOffset = baseOffset + ((index % 2 == 0) ? zigzagOffset : -zigzagOffset);
-          
-              return Positioned(
-                left: horizontalOffset,
-                top: topPosition,
-                child: GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => pages[index]),
-                    );
-                  },
-                  child: Image.asset(
-                    "assets/images/component/LoFi-Level Icon.png",
-                    width: iconSize,
-                    height: iconSize,
+                double horizontalOffset = baseOffset +
+                    ((index % 2 == 0) ? zigzagOffset : -zigzagOffset);
+
+                return Positioned(
+                  left: horizontalOffset,
+                  top: topPosition,
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => pages[index]),
+                      );
+                    },
+                    child: Image.asset(
+                      "assets/images/component/LoFi-Level Icon.png",
+                      width: iconSize,
+                      height: iconSize,
+                    ),
                   ),
-                ),
-              );
+                );
               }),
             ],
           ),
@@ -89,7 +95,6 @@ class UnitWidget extends StatelessWidget {
 }
 
 // contoh penerapan kode
-
 
 class Page4 extends StatelessWidget {
   @override
@@ -111,7 +116,6 @@ class Page5 extends StatelessWidget {
   }
 }
 
-
 class Page6 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -121,4 +125,3 @@ class Page6 extends StatelessWidget {
     );
   }
 }
-
