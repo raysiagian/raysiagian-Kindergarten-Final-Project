@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vak_app/screen/auth/registrationScreen/widget/registrationFormWidget.dart';
+import 'package:vak_app/style/localColor.dart';
 
 class RegistrationScreen extends StatefulWidget {
   const RegistrationScreen({super.key});
@@ -13,18 +14,18 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.blue,
+        backgroundColor: LocalColor.primary,
         body: Container(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const SizedBox(height: 90,),
+              const SizedBox(height: 0,),
               Image.asset("assets/images/component/HiFi-Cat.png"),
             ],
           ),
         ),
         bottomSheet: Container(
-          height: 550,
+          height: 650,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(20),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vak_app/screen/auth/loginScreen/widget/loginFormWidget.dart';
+import 'package:vak_app/style/localColor.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -13,7 +14,7 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.blue,
+        backgroundColor: LocalColor.primary,
         body: Container(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
